@@ -1,0 +1,5 @@
+// sync code command 
+repo sync -d --no-tags -j8 && \
+repo forall -c 'git branch -D master_dev' ; \
+repo start master_dev --all ; \
+repo forall -c 'pwd;git checkout -f;git clean -df' ; ./build_tags.sh
