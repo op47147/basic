@@ -3,3 +3,9 @@ repo sync -d --no-tags -j8 && \
 repo forall -c 'git branch -D master_dev' ; \
 repo start master_dev --all ; \
 repo forall -c 'pwd;git checkout -f;git clean -df' ; ./build_tags.sh
+
+#一直logcat #
+while true; do cat /d/gpio | grep gpio29 ; echo "\n" ; sleep 1 ; done ; 
+
+#grep txt in file#
+find . -name \*.mk | xargs grep libGLES_mali
